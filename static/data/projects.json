@@ -1,0 +1,77 @@
+{
+    "projects": [
+        {
+            "id": 1,
+            "title": "KagaMe – Virtual Stylist",
+            "image": "kagame.jpg",
+            "summary": "Shop for clothes that match with what you already own using our Personal Virtual Stylist",
+            "description": ["KagaMe started out as an entrepreneurship capstone project based on problems I face with understanding my wardrobe, personal style and shopping for clothes.",
+                            "Upon winning the SUTD Baby Shark Grant, we began developing the fashion styling and recommendation algorithm on top of OpenAI’s GPT API.",
+                            "We then participated in the 15K competition hosted by the MIT Club of Singapore. I pitched the project and competed against other university start-ups, eventually winning the 1st place.",
+                            "The momentum from this competition has motivated us to continue developing and pursing this as a start-up, and we are currently working on developing a better styling algorithm for the app."],
+            "achievements": [
+                "Won MIT Club of Singapore 15K Competition",
+                "Awarded SUTD Baby Shark Fund",
+                "Secured SUTD E-Capstone Grant"
+            ],
+            "technologies": ["Python", "OpenAI GPT", "LLAMA", "Startup", "🏆 15K Competition"],
+            "links": [{"label": "Website", "url": "https://kagame.webflow.io"}]
+        },
+        {
+            "id": 2,
+            "title": "ROS2 SLAM and Image Detection",
+            "image": "ros2_slam.jpg",
+            "summary": "Autonomous robot navigation and object detection on a Turtlebot3",
+            "description": ["As part of the SUTD 30.119 Intelligent Robotics Course, we were tasked with developing autonomous navigation and object detection on a Turtlebot3 robot running ROS2.",
+                            "This project was the first time I wrote my own ROS2 nodes in Python, and allowed me to gain a deeper understanding for Robotic systems operated with ROS2.",
+                            "We utilised and modified open-source code for implementing Frontier Exploration based SLAM. This allowed our Robot to explore frontiers on the generated map and keep going until the map is fully populated.",
+                            "We then used YOLOv11 for our image recognition and counter, which uses the /odom topic to get where the robot sees an image and register that as a count. This is to ensure there is no double counting of images as the robot navigates the maze.",
+                            "This project really inspired me to further pursue software development for Robotics, and I have since borrowed the Turtlebot to play around with different algorithms and explore how GenAI can change the way we program robots."],
+            "technologies": ["ROS2", "Python", "YOLOv11", "Lidar"],
+            "links":[{"label": "YouTube", "url": "https://youtu.be/4p1rxI0JCTQ?si=dX22yVOuXOtzDoht"},{"label": "GitHub", "url":"https://github.com/aymanneedshelp/IR_Challege"}]
+        },
+        {
+            "id": 3,
+            "title": "MOMOBOT",
+            "image": "momobot.jpg",
+            "summary": "MomoBot - Mobile Modular Robot, an SUTD SOAR Project",
+            "description": ["I joined the Robotics club at my university during my freshman year and was introduced to the MomoBot project. Momo stands for Modular and Mobile and is a play on the Japanese name for peaches, a hint at the cute design features of this welcoming robot. I joined the team nearing the end of the development of the robot, so my involvement was more on the deployment and showcasing side.",
+                            "With the guidance of my seniors who developed the robot, I learnt a lot about the subsystems in an autonomous robot including what’s required for motor control, computer vision, Lidar navigation systems as well as ROS which ran the whole thing. I took responsibility for mapping and navigating our campus centre building for our university open house.",
+                            "MomoBot opened the doors of robotics for me and stands as an inspiration to all my other projects."],
+            "technologies": ["Mechanical Design", "Electronics", "Robotics"],
+            "links":[{"label": "Website", "url":"https://momobot.opensutd.org"}]
+        },
+        {
+            "id": 4,
+            "title": "Fluid Mechanics - Electrowetting",
+            "image": "electrowetting.jpg",
+            "summary": "Controlling droplets of water using Electricity to conduct water quality tests",
+            "description": ["As part of a Fluid Mechanics course in my 5th term at SUTD where we were tasked with creating microfluidic devices. Our team decided to think outside the box and explore digital microfluidics. It is a field of study where small amounts of fluids are manipulated electrically. In our application, we wanted to use it to move water droplets and test it against various reagents to analyse its quality.",
+                            "With the help of the open-source project OpenDrop we were able to learn the principles of digital microfluidics and get started with our custom PCB design. This project was my first endeavour in PCB design, and I was quick to pick it up with the help of online tutorials.",
+                            "This project turned out to be quite the journey due to the lack of information about electrowetting or digital microfluidics, so it took us a few iterations of PCB design, different lubricants, different fluids to get working results."],
+            "technologies": ["PCB Design", "Microcontrollers", "Fluid Mechanics"],
+            "links":[{"label": "More Info", "url":"https://www.canva.com/design/DAFqMpD3is4/h9XrY3lC8dnNCUOcRaipoA/edit"}]
+        },
+        {
+            "id": 5,
+            "title": "TrollE - Power Assisted Trolley",
+            "image": "trolle.jpg",
+            "summary": "Motorised grocery trolley with a protective spring basket",
+            "description": ["Given the theme “Travel” we were tasked to design and engineer a product that would aide in travel of any kind. The theme was loose and thus we decided to look at it through the lens of daily commutes for the elderly. Here in Singapore, the elderly like to be independent and thus can be seen lugging around trolleys with groceries to and from malls and markets.",
+                            "We wanted to help this group elderly folk by designing a foldable electric grocery trolley. This project took us through ideation phases, designs, prototyping and finally a working concept. We learnt about different mechanism and mechanical designing techniques, motors and motor control and CAD Designing.",
+                            "We designed a pin-bed mechanism to prevent fragile goods from moving around. We 3D printed these pins and used memory foam as a spring. We integrated folding mechanisms and waterproofed the electronics for ease of use."],
+            "technologies": ["Mechanical Design", "Design Thinking", "Ecectronics","Microcontrollers"]
+        },
+        {
+            "id": 6,
+            "title": "PedRo - Pedestrian Robot",
+            "image": "pedro.jpg",
+            "summary": "Pedestrial accompanying robot to boost human interactions",
+            "description": ["During our freshman year, one of our modules introduced us to design thinking and the concept of generating ideas and inspiration. Up until this point I always thought innovation and ideas just come to you, however through this course I learnt how to think up such ideas. This was done through a project where we identified activities and interactions in a public space, created a problem statement and designed a solution.",
+                            "In our case, we saw a long and boring footpath that connected our university to the nearby business park and shopping complex and designed a robot to make the walk more interactive and enjoyable. We also addressed an issue that was students carrying grocery bags by adding a luggage compartment in the robot.",
+                            "Our prototype worked with an ultrasonic sensor and a Bluetooth connected phone app. The user can choose where they are heading, and the robot will follow them. They can also manually control the robot and leave behind a message for the next user. We even integrated train timings so that users will know how fast they must walk to catch the next train, giving them some peace of mind."],
+            "technologies": ["Fusion360", "3D Printing", "Microcontrollers", "Design Thinking"],
+            "links":[{"label": "YouTube", "url":"https://www.youtube.com/watch?v=sDa1eDrgHB0"}]
+        }
+    ]
+}

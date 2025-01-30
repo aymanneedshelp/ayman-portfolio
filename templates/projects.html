@@ -1,0 +1,35 @@
+<!-- templates/projects.html -->
+{% extends "base.html" %}
+{% block title %}Projects - Ayman Khan{% endblock %}
+{% block content %}
+<h1>Featured Projects</h1>
+<div class="projects-container">
+    {% if projects %}
+        {% for project in projects %}
+        <div class="project-card" onclick="openProject({{ project.id }})">
+            {% if project.image %}
+                <img src="{{ url_for('static', filename='images/' + project.image) }}" 
+                     alt="{{ project.title }}"
+                     class="project-image">
+            {% endif %}
+            <h3>{{ project.title }}</h3>
+            <p>{{ project.description[:150] }}...</p>
+            <div class="technologies">
+                {% for tech in project.technologies %}
+                    <span class="tech-tag">{{ tech }}</span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>No projects available at the moment.</p>
+    {% endif %}
+</div>
+
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <div id="modalContent"></div>
+    </div>
+</div>
+{% endblock %}

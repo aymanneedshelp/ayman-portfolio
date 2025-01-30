@@ -1,0 +1,33 @@
+{
+    "experiences": [
+        {
+            "company": "ALSTOM",
+            "role": "Robotics Engineer",
+            "department": "Innovation Station",
+            "period": "May 2024 - Sep 2024",
+            "description": "At the Alstom Innovation Station, we worked towards using cutting edge technology to optimise Train and Rail manufacturing and operations. In the Robotics team, we focused on maintenance inspections. We designed robots and digital frameworks to enable efficient, repeatable and data-driven train inspection to ensure safety and cost efficiency for our clients.",
+            "technologies": ["Robotics Simulation", "Digital Solutions", "Mechanical Design","Wireless Communication"],
+            "achievements": [
+                "Accelerated development and testing of Inspection Robots by modifying commercial off-the-shelf robots to create POCs.",
+                "Created Digital Twins of the Robots to test mobility and dimensions using Robotics Simulation Software Webots.",
+                "Designed Inspection Robots based off testing data and created RFP (Request for Proposal) documents to engage partners in creating a productized version.",
+                "Analyzed and created end-to-end digital solutions to integrate Smart Robots in existing Alstom workflows."
+            ]
+        },
+        {
+            "company": "LIONSBOT INTERNATIONAL",
+            "role": "Robotics Engineer",
+            "department": "Mechanical Design",
+            "period": "Aug 2023 - Dec 2023",
+            "description": "LionsBot is the fifth fastest growing company in Singapore, designing and manufacturing award winning Autonomous Cleaning Robots. As part of their R&D department, we design components for their new lines as well as upgrades for their existing products.",
+            "technologies": ["SolidWorks", "Mechanical Design","Microcontrollers","3D Printing"],
+            "achievements": [
+                "Took responsibility of measuring performance of a cleaning robot’s floor-tool and identified mechanical constraints.",
+                "Designed tools and jigs to reliably and repeatedly conduct standardized tests through rapid prototyping and iterative design.",
+                "Collected and analyzed data from these tests to identify constraints and opportunities for design optimization.",
+                "Redesigned the vacuum cleaning floor-tool on the robot using SolidWorks, 3D Printing and controller circuits for Brushless DC Motors used in vacuum system and floor brush.",
+                "Spearheaded testing and technical documentation of prototype iterations and presented findings to stakeholders effectively. Design drawings were submitted to suppliers to be industrialized."
+            ]
+        }
+    ]
+}

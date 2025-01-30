@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ayman Khan - Robotics Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
+
+    <section id="about">
+        <div class="hero-section">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Ayman Khan</h1>
+                    <div class="subtitle">Robotics Engineer & Innovator</div>
+                    <p>Designing the future with Robotics and AI</p>
+                    <div class="hero-social-links">
+                        <a href="https://github.com/aymanneedshelp" target="_blank">
+                            <i class="fab fa-github"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/aymankhan05" target="_blank">
+                            <i class="fab fa-linkedin"></i>
+                        </a>
+                        <a href="https://instagram.com/aymanxkhan" target="_blank">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="mailto:ayman_khan@mymail.sutd.edu">
+                            <i class="fas fa-envelope"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="about-section">
+            <div class="container">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <div class="education">
+                        <h3>Education</h3>
+                        <p>Singapore University of Technology and Design (SUTD) (2021-2025)</p>
+                        <ul>
+                            <li>Bachelor of Engineering (Engineering Product Development)</li>
+                            <li>Specialization in Robotics, Minor in Computer Science</li>
+                            <li>GPA: 4.0/5.0</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="skills">
+                        <h3>Technical Expertise</h3>
+                        <ul>
+                            <li><u>Programming</u>: Python, C++, MATLAB</li>
+                            <li><u>Robotics</u>: ROS2, Webots, Gazebo</li>
+                            <li><u>Design</u> SolidWorks, 3D Printing</li>
+                            <li><u>AI</u>: Machine Learning, Computer Vision, GenAI</li>
+                            <li><u>Entrepreneurship</u>: Business Development, Project Management, Public Speaking, Design Thinking</li>
+                        </ul>
+                    </div>
+
+                    <div class="hobbies">
+                        <h3>Beyond Engineering</h3>
+                        <p>When I'm not building robots or working on AI, you'll find me:</p>
+                        <ul>
+                            <li>Playing tennis or football on the weekends with my university friends</li>
+                            <li>Cycling! I completed the OCBC 100km Virtual Ride in 2024</li>
+                            <li>I recently started running as well and finished the SCSM Half Marathon</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="container">
+            <h2>Work Experience</h2>
+            {% for exp in experiences %}
+            <div class="experience-card">
+                <h3>{{ exp.company }}</h3>
+                <div class="role">{{ exp.role }} - {{ exp.department }}</div>
+                <div class="period">{{ exp.period }}</div>
+                <p>{{ exp.description }}</p>
+                <ul class="achievements">
+                    {% for achievement in exp.achievements %}
+                    <li>{{ achievement }}</li>
+                    {% endfor %}
+                </ul>
+                <div class="technologies">
+                    {% for tech in exp.technologies %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="container">
+            <h2>Featured Projects</h2>
+            <div class="projects-container">
+                {% for project in projects %}
+                <div class="project-card" data-project='{{ project|tojson|safe }}'>
+                    <img src="{{ url_for('static', filename='images/' + project.image) }}" 
+                         alt="{{ project.title }}"
+                         class="project-image">
+                    <h3>{{ project.title }}</h3>
+                    <p>{{ project.summary}}</p>
+                    <div class="technologies">
+                        {% for tech in project.technologies %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Modal Template -->
+    <div id="experienceModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <h2 class="experience-title"></h2>
+                <p class="experience-period"></p>
+                <div class="experience-description"></div>
+                <div class="experience-achievements"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Project Modal Template -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <div class="modal-body">
+                <h2 class="project-title"></h2>
+                <img class="project-image" src="" alt="">
+                <div class="project-description"></div>
+                <div class="project-links"></div>
+                <div class="project-technologies"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+            document.addEventListener("DOMContentLoaded", function () {
+        document.querySelectorAll(".project-card").forEach(card => {
+            card.addEventListener("click", function () {
+                const project = JSON.parse(this.getAttribute("data-project"));
+                openProjectDetails(project);
+            });
+        });
+    });
+
+    function openProjectDetails(project) {
+        const modal = document.getElementById("projectModal");
+        modal.querySelector(".project-title").textContent = project.title;
+        modal.querySelector(".project-image").src = `/static/images/${project.image}`;
+        modal.querySelector(".project-image").alt = project.title;
+        modal.querySelector(".project-description").innerHTML = project.description.map(para => `<p>${para}</p>`).join("");
+
+
+        // Create Technologies List
+        let techContainer = document.querySelector(".project-technologies");
+        techContainer.innerHTML = "";
+        project.technologies.forEach(tech => {
+            let span = document.createElement("span");
+            span.classList.add("tech-tag");
+            span.textContent = tech;
+            techContainer.appendChild(span);
+        });
+
+        let linksContainer = document.querySelector(".project-links");
+        linksContainer.innerHTML = "";
+        if (project.links) {
+            project.links.forEach(link => {
+                let a = document.createElement("a");
+                a.href = link.url;
+                a.textContent = link.label;
+                a.target = "_blank"; // Open link in a new tab
+                linksContainer.appendChild(a);
+            });
+    }
+
+        // Open Modal
+        modal.style.display = "block";
+    }
+
+    // Close Modal Functionality
+    document.querySelectorAll(".modal-close").forEach(closeBtn => {
+        closeBtn.addEventListener("click", function () {
+            this.closest(".modal").style.display = "none";
+        });
+    });
+
+    // Close modal when clicking outside of it
+    window.addEventListener("click", function (event) {
+        let modals = document.querySelectorAll(".modal");
+        modals.forEach(modal => {
+            if (event.target === modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const section = document.querySelector(this.getAttribute('href'));
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+    </script>
+
+    <footer>
+        <div class="footer-container">
+            <p>© 2024 Ayman Khan | Robotics Engineer & AI Enthusiast</p>
+            <div class="social-links">
+                <a href="https://github.com/aymanneedshelp" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://linkedin.com/in/aymankhan05" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="https://instagram.com/aymanxkhan" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="mailto:ayman_khan@mymail.sutd.edu">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
